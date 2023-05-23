@@ -1,17 +1,13 @@
 <template>
-	<div>
-	  <div>{{ name }}</div>
-	  <div>{{ surname }}</div>
-	</div>
+	<a :href="href">{{ text }}</a>
   </template>
   
   <script>
-  export default {
-	name: 'MyComponent',
+  export default{
 	data() {
 	  return {
-		name: 'Nikita',
-		surname: 'Kirkitskiy',
+		text: 'page',
+		href: 'page.html',
 	  }
 	},
   }
