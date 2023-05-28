@@ -6,26 +6,17 @@ data(){
   }
 },
 methods: {
-  show: function(){
-    let date = this.dayOfWeek(this.date);
-    alert(date);
-  },
-  dayOfWeek: function(date){
-    let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
-    return days[date];
-  },
-  main: function(){
-    const dayOfWeekDigit = new Date().getDay();
-    let days = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье']
-    return dayOfWeekDigit[days]
-  },
+	show: function(str) {
+		alert(str*str)
    }
+},
 }
+
 
 </script>
 
 <template>
-<button @click="show">Текущий день недели</button>
-{{ dayOfWeekDigit }}
+<button @click="show(2)">Квадрат числа 2</button>
+<button @click="show(3)">Квадрат числа 3</button>
 </template>
 
