@@ -1,25 +1,19 @@
 <script>
 export default{
 data(){
-  return{
-    cost: '100',
-	amount: '10',
-  }
+  
 },
-computed: {
-	price: function() {
-		return this.cost * this.amount;
-	},
-	change: function() {
-		this.cost = 150;
-	}
+methods: {
+  show: function(){
+    alert(new Date().toLocaleDateString());
+  }
 }
 }
-
 </script>
 
 <template>
-<p>{{ price }}</p>
-<button @click="change">Меняем цену</button>
+<a href="https://github.com/sm1qwz/vue3zadachi" onclick="event.preventDefault()">Ссылка</a>
+<br>
+<br>
+<button @click.once="show">Текущая дата</button>
 </template>
-
