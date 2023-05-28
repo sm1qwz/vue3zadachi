@@ -1,14 +1,13 @@
-<template>
-	<a :href="href">{{ text }}</a>
-  </template>
-  
-  <script>
-  export default{
-	data() {
-	  return {
-		text: 'page',
-		href: 'page.html',
-	  }
-	},
+<script>
+export default{
+data(){
+  return{
+	obj: {x: 1, y: 2, z: 3}
   }
-  </script>
+}
+}
+</script>
+
+<template>
+<div>{{ obj.x + obj.y + obj.z }}</div>
+</template>
