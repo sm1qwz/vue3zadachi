@@ -12,5 +12,6 @@ methods: {
 </script>
 
 <template>
-<div>{{ show() }}</div>
+<button @click="show">Текущая дата</button>
+<button @mouseover="show">Текущая дата мышкой</button>
 </template>
