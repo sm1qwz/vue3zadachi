@@ -1,17 +1,25 @@
 <script>
 export default{
 data(){
-  
+  return{
+    num1: 1,
+    num2: 2,
+    text: 'Summa'
+  }
 },
 methods: {
   show: function(){
-    alert(new Date().toLocaleDateString());
+    let text = this.cape(this.text)
+    alert(text);
+  },
+  cape: function(str){
+    return str[0].toUpperCase() + str.slice(1);
   }
 }
 }
 </script>
 
 <template>
-<button @click="show">Текущая дата</button>
-<button @mouseover="show">Текущая дата мышкой</button>
+<div>{{ cape }}</div>
+<div>{{ num1 + num2 }}</div>
 </template>
