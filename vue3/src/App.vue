@@ -2,21 +2,24 @@
 export default{
 data(){
   return{
-    date: '1'
+    text: "Привет",
   }
 },
 methods: {
-	show: function(str) {
-		alert(str*str)
+	change: function() {
+		this.text = "Пока";
+   },
+   change1: function() {
+		this.text = "Опять привет";
    }
-},
 }
-
+}
 
 </script>
 
 <template>
-<button @click="show(2)">Квадрат числа 2</button>
-<button @click="show(3)">Квадрат числа 3</button>
+{{ text }}
+<button @click="change">Меняем 1</button>
+<button @click="change1">Меняем 2</button>
 </template>
 
