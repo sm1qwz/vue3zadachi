@@ -23,9 +23,9 @@ methods: {
 
 <template>
 <button @click="toggle">toggle</button>
-<p v-if="visible">Привет</p>
+<p>{{visible ? 'Никита' : 'Киркицкий'}}</p>
+<button @click="toggle1">toggle</button>
+<p>{{visible1 ? 'Клим' : 'Сорокин'}}</p>
 <button @click="toggle2">toggle</button>
-<p v-if="visible2">Пока</p>
-<button @click="toggle3">toggle</button>
-<p v-if="visible3">Здравствуй</p>
+<p>{{visible2 ? 'Мавиле' : 'Бекирова'}}</p>
 </template>
