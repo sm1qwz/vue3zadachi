@@ -1,19 +1,15 @@
 <script>
 export default{
 data(){
-  
-},
-methods: {
-  show: function(){
-    alert(new Date().toLocaleDateString());
+  return {
+    visible: true,
+    visible1: false,
   }
 }
 }
 </script>
 
 <template>
-<a href="https://github.com/sm1qwz/vue3zadachi" onclick="event.preventDefault()">Ссылка</a>
-<br>
-<br>
-<button @click.once="show">Текущая дата</button>
+	<p v-if="visible">Привет</p>
+  <p v-if="!visible1">Пока</p>
 </template>
