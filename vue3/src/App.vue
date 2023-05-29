@@ -1,13 +1,29 @@
 <script>
 export default{
-data(){
-  return {
-    hidden: false,
+  data(){
+  return{
+    visible: true,
+btnHide: true,
+btnVis: false,
+  }
+},
+methods: {
+  hide: function(){
+    this.visible = false;
+    this.btnHide = false;
+    this.btnVis = true;
+  },
+  vis: function(){
+    this.visible = true;
+    this.btnHide = true;
+    this.btnVis = false;
   }
 }
 }
 </script>
 
 <template>
-	<p v-if="!hidden">Привет</p>
+<button @click="hide" v-if="btnHide">Скрыть</button>
+<button @click="vis" v-if="btnVis">Показать</button>
+<p v-if="visible">Привет</p>
 </template>
