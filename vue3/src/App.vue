@@ -1,18 +1,19 @@
 <script>
 export default{
-  data(){
+data(){
   return{
-    isValid: true,
-		isDisabled: true,
-    },
   }
 },
 methods: {
-
-  }
-
+}
+}
 </script>
 
 <template>
-
+<p :style="{color: 'green', background:'yellow'}">
+	Привет
+</p>
+<p :style="{fontWeight: 'bold', fontStyle: 'normal'}">
+  Пока
+</p>
 </template>
