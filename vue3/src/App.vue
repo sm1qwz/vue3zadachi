@@ -2,19 +2,33 @@
 export default{
 data(){
   return{
-    message: 'hello',
-    number: '5',
+    num: 0,
+    res: 0,
+    sum: 0,
+    num1: 0,
+    num2: 0,
   }
 },
 methods: {
+  calc:function() {
+    this.res = Math.sqrt(this.num);
+  },
+  summ:function() {
+    this.sum = this.num1 + this.num2;
+  }
+  
 }
 }
 </script>
 
 <template>
-<input v-model="message">
-<p class="pstyle" :style="{textTransform: 'uppercase'}">{{ message }}</p>
+<p class="pstyle">{{ res }}</p>
+<input class="inputstyle" v-model="num">
+<button class="greenstyle" @click="calc">work</button>
 <br>
-<input v-model="number">
-<p class="pstyle">{{ number*number }}</p>
+<p class="pstyle">{{ sum }}</p>
+<input class="inputstyle" v-model="num1">
+<input class="inputstyle" v-model="num2">
+<button class="greenstyle" @click="summ">work</button>
+<br>
 </template>
