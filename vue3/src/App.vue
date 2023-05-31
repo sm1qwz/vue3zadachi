@@ -2,7 +2,10 @@
 export default{
   data(){
   return{
-str: 'active valid'
+    obj: {
+			done: true,
+			selected:  false,
+		},
   }
 },
 methods: {
@@ -13,10 +16,10 @@ methods: {
 </script>
 
 <template>
-	<p class="pstyle">
+	<p class="obj">
 		1
 	</p>
-	<p class="pstyle">
+	<p class="obj">
 		2
 	</p>
 </template>
