@@ -2,9 +2,8 @@
 export default{
   data(){
   return{
-    visible: true,
-    styles: {
-      hidden: true,
+    isValid: true,
+		isDisabled: true,
     },
   }
 },
@@ -24,7 +23,7 @@ setTwo: function(){
 
 <template>
 <button class="greenstyle" @click="toggle">toggle</button>
-<p class="{active: true, valid: false}" v-if="visible">Привет</p>
+<p class="{valid: isValid, error: isDisabled}" v-if="visible">Привет</p>
 <p :class="styles">Пока</p>
 <button class="greenstyle" @click="setDone">visible</button>
 <button class="greenstyle" @click="setTwo">hide</button>
