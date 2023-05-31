@@ -2,6 +2,8 @@
 export default{
 data(){
   return{
+    message: 'hello',
+    number: '5',
   }
 },
 methods: {
@@ -10,10 +12,9 @@ methods: {
 </script>
 
 <template>
-<p :style="{color: 'green', background:'yellow'}">
-	Привет
-</p>
-<p :style="{fontWeight: 'bold', fontStyle: 'normal'}">
-  Пока
-</p>
+<input v-model="message">
+<p class="pstyle" :style="{textTransform: 'uppercase'}">{{ message }}</p>
+<br>
+<input v-model="number">
+<p class="pstyle">{{ number*number }}</p>
 </template>
