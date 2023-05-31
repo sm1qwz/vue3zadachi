@@ -2,8 +2,7 @@
 export default{
 data(){
   return{
-    checked: true,
-    visible: true,
+    arr: [],
   }
 },
 methods: {
@@ -16,7 +15,18 @@ ltoggle: function(){
 </script>
 
 <template>
-<input class="inputstyle" type="checkbox" v-model="checked">
-<button class="greenstyle" @click="ltoggle">toggle</button>
-<p class="pstyle" v-if="visible">{{ checked ? 'yes' : 'no' }}</p>
+  <div>
+<input class="inputstyle" type="checkbox" v-model="arr" value="Vue3">
+<label>Vue3?</label>
+<br>
+<input class="inputstyle" type="checkbox" v-model="arr" value="Js">
+<label>JavaScript?</label>
+<br>
+<input class="inputstyle" type="checkbox" v-model="arr" value="CSS">
+<label>CSS?</label>
+<ol>
+  <li v-for="elem in arr">{{ elem }}</li>
+</ol>
+</div>
+<br>
 </template>
