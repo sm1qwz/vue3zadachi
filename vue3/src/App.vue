@@ -24,7 +24,7 @@ setTwo: function(){
 
 <template>
 <button class="greenstyle" @click="toggle">toggle</button>
-<p class="hunter" v-if="visible">Привет</p>
+<p class="{active: true, valid: false}" v-if="visible">Привет</p>
 <p :class="styles">Пока</p>
 <button class="greenstyle" @click="setDone">visible</button>
 <button class="greenstyle" @click="setTwo">hide</button>
