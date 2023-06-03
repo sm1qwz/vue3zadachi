@@ -12,6 +12,9 @@ methods: {
   },
   addProductEnd:function(){
     this.products.unshift(this.newProduct);
+  },
+  removeProduct: function(index){
+    this.products.splice(index,1);
   }
 }
 }
@@ -21,11 +24,7 @@ methods: {
 <ul>
   <li v-for="(product,index) in products" :key="index">
   {{ product }}
+  <button class="greenstyle" @click="removeProduct(index)">Удалить</button>
   </li>
 </ul>
-<input class="inputstyle" v-model="newProduct">
-<button class="greenstyle"  @click="addProduct">В конец</button>
-<br>
-<input class="inputstyle" v-model="newProduct">
-<button class="greenstyle" @click="addProductEnd">В начало</button>
 </template>
