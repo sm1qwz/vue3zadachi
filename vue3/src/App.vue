@@ -2,20 +2,30 @@
 export default{
 data(){
   return{
-    text1: '',
-    text2: ''
+products: ['a', 'b', 'c', 'd', 'e'],
+newproduct: '',
   }
 },
 methods: {
+  addProduct:function(){
+    this.products.push(this.newProduct);
+  },
+  addProductEnd:function(){
+    this.products.unshift(this.newProduct);
+  }
 }
 }
 </script>
 
 <template>
-<input class="inputstyle" v-model="text1" v-on:keyup.enter="submit">
-<button class="greenstyle" @click="toggle">toggle</button>
-<p class="pstyle">{{ text1 }}</p>
+<ul>
+  <li v-for="(product,index) in products" :key="index">
+  {{ product }}
+  </li>
+</ul>
+<input class="inputstyle" v-model="newProduct">
+<button class="greenstyle"  @click="addProduct">В конец</button>
 <br>
-<a href="#" class="inline-link1" v-on:keyup.ctlr="sub">push</a>
-<p class="pstyle"></p>
+<input class="inputstyle" v-model="newProduct">
+<button class="greenstyle" @click="addProductEnd">В начало</button>
 </template>
