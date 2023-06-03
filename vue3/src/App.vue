@@ -2,29 +2,41 @@
 export default{
 data(){
   return{
-products: ['a', 'b', 'c', 'd', 'e'],
-newproduct: '',
+    students: [
+      {
+        id: 1,
+        name: 'Nikita Kirkistkiy',
+        mark: 4,
+        age: 19,
+      },
+      {
+        id: 2,
+        name: 'Mavile Bekirova',
+        mark: 5,
+        age: 19,
+      },
+      {
+        id: 3,
+        name: 'Klim Sorokin',
+        mark: 3,
+        age: 18,
+      },
+    ],
   }
 },
 methods: {
-  addProduct:function(){
-    this.products.push(this.newProduct);
-  },
-  addProductEnd:function(){
-    this.products.unshift(this.newProduct);
-  },
-  removeProduct: function(index){
-    this.products.splice(index,1);
+  removeStudent: function (id) {
+    this.students = this.students.filter((student) => {
+      return student.id !== id;
+    })
   }
 }
 }
 </script>
 
 <template>
-<ul>
-  <li v-for="(product,index) in products" :key="index">
-  {{ product }}
-  <button class="greenstyle" @click="removeProduct(index)">Удалить</button>
-  </li>
-</ul>
+<table>
+  <tr v-for="student in students" :key="student.id"> {{ student.name }} {{ student.mark }} {{ student.age }}<button class="greenstyle" @click="removeStudent(students.id)">Убрать</button>
+</tr>
+</table>
 </template>
