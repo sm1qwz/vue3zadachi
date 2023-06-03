@@ -21,22 +21,34 @@ data(){
         mark: 3,
         age: 18,
       },
-    ],
+    ]
   }
 },
 methods: {
-  removeStudent: function (id) {
-    this.students = this.students.filter((student) => {
-      return student.id !== id;
-    })
-  }
+  edit(student){
+    student.isEdit = true;
+  },
+  save(student){
+    student.isEdit = false;
+  },
 }
 }
 </script>
 
 <template>
 <table>
-  <tr v-for="student in students" :key="student.id"> {{ student.name }} {{ student.mark }} {{ student.age }}<button class="greenstyle" @click="removeStudent(students.id)">Убрать</button>
+<tr v-for="student in student" :key="student.id"> 
+<template v-if="!student.isEdit">
+  {{ student.name }} {{ student.mark }} {{ student.age }}<button class="greenstyle" @click="edit(student)">edit</button>
+</template>
+<template v-else>
+  <input v-model="student.name">
+  <input v-model="student.mark">
+  <input v-model="student.age">
+  <button class="greenstyle" @click="save(student)">
+      save
+  </button>
+</template>
 </tr>
 </table>
 </template>
