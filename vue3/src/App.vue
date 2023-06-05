@@ -4,9 +4,26 @@ import Student from './components/Employee.vue'
 export default {
   data() {
     return {
-      name: 'Niktia Kirkitskiy',
-      salary: '1',
-      age: '19',
+      students: [
+        {
+          id: 1,
+          name: 'Nikita',
+          salary: 10,
+          age: 19
+        },
+        {
+          id: 2,
+          name: 'Klim',
+          salary: 11,
+          age: 18
+        },
+        {
+          id: 3,
+          name: 'Emran',
+          salary: 500000,
+          age: 19
+        },
+      ],
     }
   },
   components: {
@@ -16,5 +33,5 @@ export default {
 </script>
 
 <template>
-<Stud :name="name" :salary="salary" :age="age"/>
+<Stud v-for="student in students" :name="student.name" :salary="student.salary" :age="student.age" :key="student.id" />
 </template>
