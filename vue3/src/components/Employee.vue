@@ -1,22 +1,23 @@
 <script>
-                export default {
-                    props: {
-                        name: String,
-                        salary: Number,
-                        age: Number
-                    },
-                    data() {
-                        return {
-                            
-                        }
-                    }
-                }
+export default {
+    emits: ['show', 'show1'],
+    data() {
+        return {
+
+        }
+    },
+    methods: {
+        handle1() {
+            this.$emit('show');
+        },
+        handle2() {
+            this.$emit('show1');
+        },
+    }
+}
 </script>
 
 <template>
-    <p class="pstyle">{{ name }} 
-    <br>
-    {{ salary }} 
-    <br>
-    {{ age }}</p>
+<button class="greenstyle" @click="handle1">Burgers</button>
+<button class="greenstyle" @click="handle2">Sandwiches</button>
     </template>
