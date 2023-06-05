@@ -10,7 +10,7 @@
 </script>
 
 <template>
-<p class="pstyle">{{ name }}</p>
-<p class="pstyle">{{ surn }}</p>
-<p class="pstyle">{{ age }}</p>
+<ul>
+    <li v-for="elem in name">{{ elem }}</li>
+</ul>
 </template>
