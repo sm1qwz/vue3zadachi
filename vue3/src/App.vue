@@ -1,5 +1,5 @@
 <script>
-import Name from './components/Name.vue'
+import Nikita from './components/Name.vue'
 
 export default {
   components: {
