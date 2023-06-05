@@ -1,13 +1,13 @@
 <script>
-import Name from './components/Name.vue'
+import Student from './components/Employee.vue'
 
 export default {
   components: {
-    Nikita
+    Student
   }
 }
 </script>
 
 <template>
-  <Nikita />
+<User name="Nikita" surn="Kirkitskiy" />
 </template>
