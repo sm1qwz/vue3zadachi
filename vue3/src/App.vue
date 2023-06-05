@@ -11,18 +11,15 @@ export default {
     Stud
   },
   methods: {
-    StudName(name) {
-      console.log(name);
-    },
-    StudSalary(name, salary){
-console.log(name, salary);
-    }
+StudName(name){
+  console.log(name);
+},
   }
 }
 
 </script>
 
 <template>
-<Stud @show="StudName" @show1="StudSalary"/> 
+<Stud @show="StudName"/> 
 </template>
 
