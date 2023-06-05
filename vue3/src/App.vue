@@ -1,7 +1,6 @@
 <script>
 import Stud from './components/Employee.vue'
 
-
 export default {
   data() {
     return {
@@ -29,10 +28,14 @@ export default {
     Stud
   },
   methods: {
-    remove(id) {
-      this.hunters = this.hunters.filter((hunter) => {
-        return hunter.id !== id;
-      })
+    change(id, name, surn){
+      this.hunters = this.hunters.map((hunter) => {
+        if(hunter.id === id){
+          hunter.name = name;
+          hunter.surn = surn;
+        }
+        return hunter;
+      });
     }
   }
 }
@@ -44,7 +47,6 @@ export default {
 		:id     ="hunter.id"
 		:name   ="hunter.name"
 		:surn   ="hunter.surn"
-		@remove ="remove"
-		:key    ="hunter.id"/>
+		:key    ="hunter.id"
+    @change="change"/>
 </template>
-
