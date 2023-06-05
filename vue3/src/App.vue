@@ -1,5 +1,5 @@
 <script>
-import Student from './components/Employee.vue'
+import Stud from './components/Employee.vue'
 
 export default {
   data() {
@@ -11,16 +11,18 @@ export default {
     Stud
   },
   methods: {
-    Burgers() {
-      alert('Hamburger, Cheeseburger, DoubleCheese');
+    StudName(name) {
+      console.log(name);
     },
-    Sandwiches(){
-      alert('Roastbeef, Texas, Denmark')
+    StudSalary(name, salary){
+console.log(name, salary);
     }
   }
 }
+
 </script>
 
 <template>
-<Stud @show="Burgers" @show1="Sandwiches" />
+<Stud @show="StudName" @show1="StudSalary"/>
 </template>
+
