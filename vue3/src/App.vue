@@ -1,5 +1,5 @@
 <script>
-import Student from './components/Employee.vue'
+import Stud from './components/Employee.vue'
 
 export default {
   data() {
