@@ -1,5 +1,7 @@
 <script>
-import Stud from './components/Employee.vue'
+import Employee from './components/Employee.vue'
+import EmployeeForm from './components/EmployeeForm.vue'
+
 
 export default {
   data() {
@@ -7,34 +9,31 @@ export default {
       hunters: [
         {
           id: 1,
-          name: 'Nikita',
-          surn: 'Kirkitskiy'
+          name: 'Alec',
+          surn: 'Lightwood'
         },
         {
           id: 2,
-          name: 'Klim',
-          surn: 'Sorokin'
+          name: 'Jace',
+          surn: 'Herondale'
         },
         {
           id: 3,
-          name: 'Mavile',
-          surn: 'Bekirova'
+          name: 'Isabel',
+          surn: 'Lightwood'
         },
       ],
 
     }
   },
   components: {
-    Stud
+    Employee, EmployeeForm
   },
   methods: {
-    change(id, name, surn){
-      this.hunters = this.hunters.map((hunter) => {
-        if(hunter.id === id){
-          hunter.name = name;
-          hunter.surn = surn;
-        }
-        return hunter;
+    add(name, surn){
+      let id = this.hunters.length + 1;
+      this.hunters.push({
+        id, name, surn
       });
     }
   }
@@ -43,10 +42,5 @@ export default {
 </script>
 
 <template>
-<Stud v-for   ="hunter in hunters"
-		:id     ="hunter.id"
-		:name   ="hunter.name"
-		:surn   ="hunter.surn"
-		:key    ="hunter.id"
-    @change="change"/>
+<EmployeeForm @add="add"/>
 </template>
