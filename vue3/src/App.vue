@@ -23,6 +23,6 @@ console.log(name, salary);
 </script>
 
 <template>
-<Stud @show="StudName" @show1="StudSalary"/> ff
+<Stud @show="StudName" @show1="StudSalary"/> 
 </template>
 
