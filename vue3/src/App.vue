@@ -9,4 +9,5 @@ export default {
 </script>
 
 <template>
+  <Nikita />
 </template>
